@@ -39,6 +39,8 @@ h3 {
     vertical-align: top;
     padding-right: 35px;
     margin-right: 20px;
+
+    width: 150px;
 }
 
 #logo img {
@@ -63,6 +65,17 @@ h3 {
 #header .right-side,
 #header .left-side {
     height: 100%;
+}
+
+.right-side {
+    position: relative;
+    display: inline-block;
+    float: right;
+    margin-top: 15px;
+}
+
+.right-side a {
+    color: #1232D2;
 }
 
 /* Full Width Header */

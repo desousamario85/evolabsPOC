@@ -84,105 +84,154 @@
                             </li>
 
                         </ul>
+
+
                     </nav>
-                    <div class="clearfix"></div>
-
-                    <!-- Main Navigation / End -->
-                    {% if messages %}
-                    <div class="message-container"></div>
-                    {% endif %}
-
-                    {% block page_header %}
-                    {% endblock %}
-
-                    {% block content %}
-                    {% endblock %}
-
-                    {% block postloadjs %}
-                    {% endblock %}
-
-                    <!-- footer start -->
-                    <div id="footer">
-
-                        <!-- Footer Top Section -->
-                        <div class="footer-middle-section .footer-top-section">
-                            <div class="container">
-                                <div class="row">
-                                    <!-- Links -->
-                                    <div class="col-xl-2 col-lg-2 col-md-3">
-                                        <div class="footer-links">
-                                            <h3>Search</h3>
-                                            <ul>
-                                                <li><a href="#"><span>Browse Apps</span></a></li>
-                                                <li><a href="#"><span>Add App</span></a></li>
-                                                <li><a href="#"><span>App Alerts</span></a></li>
-                                            </ul>
-                                        </div>
+                    <div class="right-side eirevo-color">
+                        <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                            <li class="list-inline-item dropdown">
+                                <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <div class="text-center">
+                                        <div><i class="fas fa-user fa-lg"></i></div>
+                                        <p class="my-0">My Account</p>
                                     </div>
-
-                                    <!-- Links -->
-                                    <div class="col-xl-2 col-lg-2 col-md-3">
-                                        <div class="footer-links">
-                                            <h3>Knowledge</h3>
-                                            <ul>
-                                                <li><a href="#"><span>PowerApps</span></a></li>
-                                                <li><a href="#"><span>Power BI</span></a></li>
-                                                <li><a href="#"><span>Flow</span></a></li>
-                                                <li><a href="#"><span>SharePoint</span></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <!-- Links -->
-                                    <div class="col-xl-2 col-lg-2 col-md-3">
-                                        <div class="footer-links">
-                                            <h3>Helpful Links</h3>
-                                            <ul>
-                                                <li><a href="#"><span>Contact</span></a></li>
-                                                <li><a href="#"><span>Privacy Policy</span></a></li>
-                                                <li><a href="#"><span>Terms of Use</span></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <!-- Links to be completed with If Statements-->
-                                    <div class="col-xl-2 col-lg-2 col-md-3">
-                                        <div class="footer-links">
-                                            <h3>Account</h3>
-                                            <ul>
-                                                <li><a href="#"><span>Log In</span></a></li>
-                                                <li><a href="#"><span>My Account</span></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <!-- Newsletter -->
-                                    <div class="col-xl-4 col-lg-4 col-md-12">
-                                        <h3><i class="icon-feather-mail"></i> Sign Up For Apps Newsletter</h3>
-                                        <p>Weekly breaking news, analysis and cutting edge advices Apps.</p>
-                                        <form action="#" method="get" class="newsletter">
-                                            <input type="text" name="email" placeholder="Enter your email address">
-                                            <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
-                                        </form>
-                                    </div>
+                                </a>
+                                <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                                    {% if request.user.is_authenticated %}
+                                    {% if request.user.is_superuser %}
+                                    <a href="" class="dropdown-item">Product Management</a>
+                                    {% endif %}
+                                    <a href="" class="dropdown-item">My Profile</a>
+                                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                    {% else %}
+                                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                    {% endif %}
                                 </div>
-                            </div>
-                        </div>
-                        <!-- Footer Top Section / End -->
-
-                        <!-- Footer Copyrights -->
-                        <div class="footer-bottom-section">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-xl-12">
-                                        © 2022 <span class="eirevo-color font-weight-bold">eir evo Labs</span>. All Rights Reserved.
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
+                                    <div class="text-center">
+                                        <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                                        <p class="my-0">
+                                            {% if grand_total %}
+                                            ${{ grand_total|floatformat:2 }}
+                                            {% else %}
+                                            €0.00
+                                            {% endif %}
+                                        </p>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Footer Copyrights / End -->
+                                </a>
+                            </li>
+                        </ul>
+
                     </div>
-                    <!-- Footer / End -->
+
+                </div>
+
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+    </header>
+
+
+    <!-- Main Navigation / End -->
+    {% if messages %}
+    <div class="message-container"></div>
+    {% endif %}
+
+    {% block page_header %}
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% block postloadjs %}
+    {% endblock %}
+
+    <!-- footer start -->
+    <div id="footer">
+
+        <!-- Footer Top Section -->
+        <div class="footer-middle-section .footer-top-section">
+            <div class="container">
+                <div class="row">
+                    <!-- Links -->
+                    <div class="col-xl-2 col-lg-2 col-md-3">
+                        <div class="footer-links">
+                            <h3>Search</h3>
+                            <ul>
+                                <li><a href="#"><span>Browse Apps</span></a></li>
+                                <li><a href="#"><span>Add App</span></a></li>
+                                <li><a href="#"><span>App Alerts</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Links -->
+                    <div class="col-xl-2 col-lg-2 col-md-3">
+                        <div class="footer-links">
+                            <h3>Knowledge</h3>
+                            <ul>
+                                <li><a href="#"><span>PowerApps</span></a></li>
+                                <li><a href="#"><span>Power BI</span></a></li>
+                                <li><a href="#"><span>Flow</span></a></li>
+                                <li><a href="#"><span>SharePoint</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Links -->
+                    <div class="col-xl-2 col-lg-2 col-md-3">
+                        <div class="footer-links">
+                            <h3>Helpful Links</h3>
+                            <ul>
+                                <li><a href="#"><span>Contact</span></a></li>
+                                <li><a href="#"><span>Privacy Policy</span></a></li>
+                                <li><a href="#"><span>Terms of Use</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Links to be completed with If Statements-->
+                    <div class="col-xl-2 col-lg-2 col-md-3">
+                        <div class="footer-links">
+                            <h3>Account</h3>
+                            <ul>
+                                <li><a href="#"><span>Log In</span></a></li>
+                                <li><a href="#"><span>My Account</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="col-xl-4 col-lg-4 col-md-12">
+                        <h3><i class="icon-feather-mail"></i> Sign Up For Apps Newsletter</h3>
+                        <p>Weekly breaking news, analysis and cutting edge advices Apps.</p>
+                        <form action="#" method="get" class="newsletter">
+                            <input type="text" name="email" placeholder="Enter your email address">
+                            <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Top Section / End -->
+
+        <!-- Footer Copyrights -->
+        <div class="footer-bottom-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        © 2022 <span class="eirevo-color font-weight-bold">eir evo Labs</span>. All Rights Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Copyrights / End -->
+    </div>
+    <!-- Footer / End -->
 
 </body>
 
