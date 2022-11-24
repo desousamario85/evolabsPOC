@@ -791,3 +791,877 @@ body #navigation ul ul ul {
     }
 
 }
+
+
+/* ---------------------------------- */
+/* Forms Reset & Styles
+------------------------------------- */
+input,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+textarea,
+select {
+    height: 48px;
+    line-height: 48px;
+    padding: 0 20px;
+    outline: none;
+    font-size: 16px;
+    color: #808080;
+    margin: 0 0 16px 0;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    background-color: #fff;
+    font-weight: 500;
+    opacity: 1;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.12);
+}
+
+select {
+    padding: 15px 18px;
+    cursor: pointer;
+}
+
+input {
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+input:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    color: #808080;
+    transition: box-shadow 0.2s !important;
+    opacity: 1;
+    border: none;
+    box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.12);
+}
+
+input:-webkit-autofill:focus,
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #fff inset !important;
+    -webkit-text-fill-color: #808080 !important;
+}
+
+/* With Border */
+input.with-border,
+input[type="text"].with-border,
+input[type="password"].with-border,
+input[type="email"].with-border,
+input[type="number"].with-border,
+textarea.with-border,
+select.with-border {
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.05);
+}
+
+input.with-border:focus,
+input[type="text"].with-border:focus,
+input[type="password"].with-border:focus,
+input[type="email"].with-border:focus,
+input[type="number"].with-border:focus,
+textarea.with-border:focus {
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.08);
+}
+
+input[type="submit"] {
+    border: none;
+    padding: 11px 18px;
+    width: auto;
+}
+
+input[type="checkbox"] {
+    display: inline;
+}
+
+input[type="radio"] {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    box-shadow: none;
+}
+
+
+/* Input Placeholder Color */
+::placeholder {
+    color: #808080;
+    opacity: 1;
+}
+
+textarea {
+    height: auto;
+    line-height: 27px;
+    padding: 20px;
+    min-height: 130px;
+    transition: none !important;
+    min-width: 100%;
+}
+
+label,
+legend {
+    display: block;
+    font-weight: bold;
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 8px;
+}
+
+
+label span,
+legend span {
+    font-weight: normal;
+    font-size: 14px;
+    color: #444;
+}
+
+fieldset {
+    padding: 0;
+    border: none;
+}
+
+button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    cursor: pointer;
+}
+
+a {
+    color: #66676b;
+    transition: 0.3s;
+}
+
+a,
+button {
+    outline: none !important;
+}
+
+a:focus,
+a:hover {
+    text-decoration: none;
+    color: #333;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/* ---------------------------------- */
+/* Freelancers - Grid Layout
+------------------------------------- */
+.freelancers-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% + 30px);
+}
+
+.freelancer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 30px 30px 0;
+    width: calc(100% * (1/2) - 30px);
+    border-radius: 4px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+    background-color: #fff;
+    transition: 0.3s;
+    position: relative;
+    cursor: default;
+}
+
+.freelancer:hover {
+    box-shadow: 0 2px 18px rgba(0, 0, 0, 0.14);
+    transform: translateY(-4px);
+}
+
+.freelancer .bookmark-icon {
+    cursor: pointer;
+}
+
+.freelancer-overview {
+    text-align: center;
+    padding: 38px 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.freelancer-overview-inner {
+    flex: 1;
+}
+
+.freelancer-overview .freelancer-avatar {
+    width: 110px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.freelancer-overview .freelancer-avatar img {
+    width: 100%;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.freelancer-overview .freelancer-avatar .verified-badge {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: none;
+}
+
+.freelancer-name {
+    margin-top: 19px;
+}
+
+.freelancer-rating {
+    margin-top: 5px;
+    margin-bottom: -10px;
+}
+
+.freelancer-name h4,
+.freelancer-name h4 a {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+}
+
+.freelancer-name img.flag {
+    height: 35px;
+    border-radius: 3px;
+    position: relative;
+    top: -1px;
+    display: inline-block;
+    /*box-shadow: 0 0 3px rgba(0,0,0,0.2);*/
+    margin-left: 4px;
+    cursor: default;
+    margin-bottom: 10px;
+}
+
+.freelancer-name span {
+    color: #888;
+}
+
+.freelancer-details {
+    padding: 35px;
+    background-color: #fafafa;
+    flex-grow: 0;
+}
+
+.freelancers-grid-layout .freelancer-details {
+    border-radius: 0 0 4px 4px;
+}
+
+.freelancers-grid-layout .freelancer-details a.button {
+    display: block;
+    text-align: center;
+    width: 100% !important;
+    transition: 0.3s;
+    box-shadow: 0 4px 12px rgba(102, 103, 107, 0.1);
+}
+
+.freelancer-details a.button:hover {
+    box-shadow: 0 4px 12px rgba(102, 103, 107, 0.2);
+}
+
+.freelancer-details-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 5px 0;
+    font-size: 14.7px;
+    text-align: center;
+}
+
+.freelancer-details-list ul li {
+    display: inline-block;
+    margin-right: 25px;
+    line-height: 23px;
+    color: #808080;
+    margin-bottom: 15px;
+}
+
+.freelancer-details-list ul li:last-child {
+    margin-right: 0;
+}
+
+.freelancer-details-list ul li strong {
+    display: block;
+    color: #333;
+}
+
+.freelancer-details-list ul li strong i {
+    position: relative;
+    top: 1px;
+    margin-right: -1px;
+    margin-left: -2px;
+}
+
+
+/* Detail Item */
+.freelancer-detail-item {
+    display: inline-block;
+    margin: 2px 10px 5px 0;
+}
+
+.freelancer-detail-item a,
+.freelancer-detail-item {
+    color: #888;
+}
+
+.freelancer-detail-item a:hover {
+    color: #66676b;
+}
+
+.freelancer-detail-item i {
+    position: relative;
+    top: 2px;
+    margin-right: 3px;
+}
+
+
+/* Media Queiers for Freelancers List */
+@media (max-width: 1366px) {
+    .freelances-grid-layout .freelancer-overview .freelancer-avatar {
+        width: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .freelances-grid-layout.freelancers-container {
+        width: 100%;
+    }
+
+    .freelances-grid-layout .freelancer {
+        margin: 0 0 30px 0;
+        width: 100%;
+    }
+
+    .freelancers-container.freelancers-grid-layout {
+        width: 100%;
+    }
+
+    .freelancers-container.freelancers-grid-layout .freelancer {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+/* Full Page Media Queiers for Freelancers List */
+@media (max-width: 2560px) {
+    .full-page-container .freelancer {
+        width: calc(100% * (1/4) - 30px);
+    }
+}
+
+@media (max-width: 1920px) {
+    .full-page-container .freelancer {
+        width: calc(100% * (1/3) - 30px);
+    }
+}
+
+@media (max-width: 1366px) {
+    .full-page-container .freelancer {
+        width: calc(100% * (1/2) - 30px);
+    }
+}
+
+@media (max-width: 1099px) {
+    .full-page-container .freelancers-container {
+        width: 100%;
+    }
+
+    .full-page-container .freelancer {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+/* ---------------------------------- */
+/* Freelancers - List Layout
+------------------------------------- */
+.freelancers-container.freelancers-list-layout {
+    width: 100%;
+}
+
+.freelancers-list-layout .freelancer {
+    margin: 0 0 30px 0;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+.freelancers-list-layout .freelancer-overview {
+    text-align: left;
+    padding: 45px 40px;
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.freelancers-list-layout .freelancer-overview-inner {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.freelancers-list-layout .freelancer-details {
+    padding: 45px 40px 45px 0;
+    background-color: transparent;
+    flex: 0 0 360px;
+}
+
+.freelancers-list-layout .freelancer-overview .freelancer-avatar {
+    width: 100px;
+    margin: 0;
+}
+
+.freelancers-list-layout .freelancer-overview .freelancer-name {
+    text-align: left;
+    margin: 0 0 0 30px;
+}
+
+.freelancers-list-layout .freelancer-details a.button {
+    display: block;
+    text-align: center;
+    min-width: 50%;
+    max-width: 100%;
+    width: auto !important;
+    transition: 0.3s;
+    float: right;
+    box-shadow: 0 4px 12px rgba(102, 103, 107, 0.15);
+}
+
+.freelancers-list-layout .freelancer-details a.button:hover {
+    box-shadow: 0 4px 12px rgba(102, 103, 107, 0.25);
+}
+
+.freelancers-list-layout .bookmark-icon {
+    display: none;
+}
+
+.freelancers-list-layout .freelancer-details-list ul {
+    float: right;
+    display: block
+}
+
+.freelancers-list-layout .freelancer-details-list ul li {
+    margin-left: 25px;
+    margin-right: 0;
+    float: right;
+}
+
+/* Freelancers Compact List */
+.compact-list.freelancers-list-layout .freelancer {
+    border-radius: 0;
+    margin-bottom: 0;
+    box-shadow: none;
+}
+
+.compact-list.freelancers-list-layout .freelancer:hover {
+    transform: translateY(0);
+}
+
+.compact-list.freelancers-list-layout {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+}
+
+.compact-list.freelancers-list-layout .freelancer:nth-child(2n) {
+    background-color: #fafafa;
+}
+
+.compact-list.freelancers-list-layout .freelancer:hover:before {
+    opacity: 1;
+}
+
+.compact-list.freelancers-list-layout .freelancer:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    display: block;
+    background: #66676b;
+    transition: 0.3s;
+    opacity: 0;
+}
+
+.compact-list.freelancers-list-layout .freelancer:last-of-type {
+    border-radius: 0 0 3px 3px;
+    overflow: hidden;
+}
+
+.compact-list.freelancers-list-layout .freelancer:first-of-type {
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
+}
+
+
+/* Media Queiers for Freelancers List Layout */
+@media (max-width: 1366px) {
+    .freelancers-list-layout .freelancer-overview .freelancer-avatar {
+        width: 100px;
+    }
+}
+
+@media (max-width: 1240px) {
+
+    .freelancers-list-layout .freelancer {
+        flex-direction: column;
+    }
+
+    .freelancers-list-layout .freelancer-details {
+        flex: 1;
+        padding: 35px 40px;
+        background-color: #fafafa;
+    }
+
+    .freelancers-list-layout .freelancer-details-list ul {
+        float: left;
+    }
+
+    .freelancers-list-layout .freelancer-details-list ul li {
+        margin-left: 0;
+        margin-right: 25px;
+        float: left;
+    }
+
+    .freelancers-list-layout .freelancer-details a.button {
+        float: none;
+        width: 100% !important;
+    }
+
+    .freelancers-list-layout .freelancer-overview .freelancer-avatar {
+        width: 90px;
+    }
+
+    /* Compact Layout */
+    .compact-list.freelancers-list-layout .freelancer-details {
+        background-color: transparent;
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .freelancers-list-layout .freelancer-overview,
+    .freelancers-list-layout .freelancer-details {
+        padding: 30px;
+    }
+
+    .freelancers-list-layout .freelancer-overview .freelancer-avatar {
+        width: 80px;
+    }
+
+    .freelancers-list-layout .star-rating:before {
+        display: block;
+        float: none;
+        text-align: center;
+        max-width: 40px;
+        margin-bottom: 4px;
+    }
+}
+
+/* ---------------------------------- */
+/* Intro Banner
+------------------------------------- */
+.intro-banner {
+    padding: 105px 0px;
+    position: relative;
+}
+
+.intro-banner.big-padding {
+    padding: 130px 0;
+}
+
+.intro-banner .container {
+    z-index: 100;
+    position: relative;
+}
+
+.intro-banner:after,
+.intro-banner:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 15;
+    background: linear-gradient(to right, rgba(250, 250, 250, 1) 20%, rgba(250, 250, 250, .95) 50%, rgba(250, 250, 250, 0.1) 80%, rgba(250, 250, 250, 0) 100%);
+}
+
+.intro-banner:after {
+    z-index: 5;
+    background-color: #fafafa;
+}
+
+.intro-banner .background-image-container {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 100% 60%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 90%;
+    left: 10%;
+    z-index: 10;
+    overflow: hidden;
+}
+
+/* Disabled Gradient */
+.intro-banner.disable-gradient:before {
+    background: #f2f2f2;
+    opacity: 0.85;
+}
+
+.intro-banner.disable-gradient .background-image-container {
+    left: 0;
+    width: 100%;
+}
+
+/* Banner Headline */
+.banner-headline {
+    display: block;
+    max-width: 55%;
+}
+
+.banner-headline h1,
+.banner-headline h2,
+.banner-headline h3,
+.banner-headline h4 {
+    font-size: 28px;
+    font-weight: 300;
+    color: #777;
+    line-height: 42px;
+}
+
+.banner-headline strong {
+    font-weight: 600;
+    color: #333;
+}
+
+.banner-headline strong.color {
+    color: #66676b;
+}
+
+
+/* Alternative Headline */
+.banner-headline-alt {
+    margin: -10px 0 0 0;
+    display: block;
+}
+
+.banner-headline-alt h3 {
+    font-size: 40px;
+    font-weight: 600;
+    color: #333;
+    line-height: 50px;
+}
+
+.banner-headline-alt span {
+    font-size: 24px;
+    color: #888;
+    font-weight: 300;
+    line-height: 34px;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.dark-overlay .banner-headline-alt h3 {
+    color: #fff;
+}
+
+.dark-overlay .banner-headline-alt span {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* ---------------------------------- */
+/* Text Banner
+------------------------------------- */
+.photo-section {
+    background-size: cover;
+    background-position: 50%;
+    display: block;
+    position: relative;
+}
+
+.photo-section:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    opacity: 0.1;
+    display: block;
+    position: absolute;
+    top: 0;
+}
+
+
+
+/* Styles for info banner with parallax */
+.text-content {
+    background: transparent;
+    padding: 110px 0px;
+    font-weight: 500;
+    z-index: 99;
+    position: relative;
+}
+
+
+
+.text-content a.button {
+    font-size: 16px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.text-content p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 31px;
+    opacity: 0.85;
+}
+
+.text-content h2 {
+    margin-bottom: 23px;
+    line-height: 46px;
+    font-size: 34px;
+    font-weight: 500;
+}
+
+.top-1 {
+    position: relative;
+    top: -1px;
+}
+
+.top-0 {
+    position: relative;
+}
+
+
+@media (max-width: 992px) {
+    .text-content {
+        padding: 80px 0;
+    }
+
+    .text-content h2 {
+        margin-bottom: 20px;
+        line-height: 40px;
+        font-size: 30px;
+        font-weight: 500;
+    }
+}
+
+
+/* Slide Out Button */
+.button.button-slide-out span {
+    transform: translateY(0px);
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.button.button-slide-out:hover span {
+    transform: translateY(-10px);
+    opacity: 0;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.button.button-slide-out i {
+    transform: translateY(calc(-50% + 10px));
+    opacity: 0;
+    display: inline-block;
+    transition: 0.3s;
+    position: absolute;
+    left: 0;
+    right: 0;
+    font-size: 18px;
+    top: 50%;
+    height: 20px;
+}
+
+.button.button-slide-out:hover i {
+    transform: translateY(calc(-50% + 0px));
+    opacity: 1;
+}
+
+
+/* Move on Hover */
+.move-on-hover {
+    box-shadow: 0 4px 12px rgba(102, 103, 107, 0.1);
+    transform: translateY(0);
+    transition: 0.3s;
+}
+
+.move-on-hover:hover {
+    box-shadow: 0 4px 12px rgba(102, 103, 107, 0.2);
+    transform: translateY(-2px)
+}
+
+/* ---------------------------------- */
+/* Ripple Effect
+------------------------------------- */
+.ripple-effect-dark,
+.ripple-effect {
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.ripple-effect span.ripple-overlay,
+.ripple-effect-dark span.ripple-overlay {
+    animation: ripple 0.9s;
+    border-radius: 100%;
+    background: #fff;
+    height: 12px;
+    position: absolute;
+    width: 12px;
+    line-height: 12px;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.ripple-effect-dark span.ripple-overlay {
+    background: #000;
+    opacity: 0.07;
+}
+
+@keyframes ripple {
+    0% {
+        -webkit-transform: scale(4);
+        transform: scale(4);
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: scale(40);
+        transform: scale(40);
+    }
+}
