@@ -1,22 +1,25 @@
 from django.db import models
 from djchoices import DjangoChoices, ChoiceItem
+from multiselectfield import MultiSelectField
 
 # Create your models here.
 
 class tech(DjangoChoices):
-    PowerBI = ChoiceItem(1,'Power BI')
-    PowerApps = ChoiceItem(2, 'Power Apps')
-    PowerAutomate = ChoiceItem(3, 'Power Apps')
-    PowerVA = ChoiceItem(4, 'Power Virtual Agents')
-    Android = ChoiceItem(5, 'Android')
-    iOS = ChoiceItem(6, 'iOS')
-    Javascript = ChoiceItem(7, 'JavaScript')
-    React = ChoiceItem(8, 'React')
-    Django = ChoiceItem(9, 'Django')
-    DocuSign = ChoiceItem(10, 'DocuSign')
-    Stripe = ChoiceItem(11, 'Stripe')
+    PowerBI = ChoiceItem('Power BI')
+    PowerApps = ChoiceItem( 'Power Apps')
+    PowerAutomate = ChoiceItem( 'Power Apps')
+    PowerVA = ChoiceItem( 'Power Virtual Agents')
+    Android = ChoiceItem('Android')
+    iOS = ChoiceItem('iOS')
+    Javascript = ChoiceItem( 'JavaScript')
+    React = ChoiceItem('React')
+    Django = ChoiceItem('Django')
+    DocuSign = ChoiceItem('DocuSign')
+    Stripe = ChoiceItem('Stripe')
     
-
+class license_types(DjangoChoices):
+    Device = ChoiceItem('Device')
+    User = ChoiceItem('User')
 
 class Category(models.Model):
 
@@ -44,8 +47,8 @@ class Product(models.Model):
     image = models.ImageField(null=True, blank=True)
     version = models.FloatField(null=True, blank=True)
     last_update = models.CharField(max_length=50,null=True, blank=True)
-    tags = models.CharField(max_length=50, choices=tech.choices)
-    license = models.TextField()
+    tags = MultiSelectField(max_length=50, choices=tech.choices)
+    license = models.CharField(max_length=50, choices=license_types)
 
     def __str__(self):
         return self.name
