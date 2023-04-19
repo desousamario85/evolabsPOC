@@ -1,0 +1,1 @@
+web: gunicorn evo_labs.wsgi
