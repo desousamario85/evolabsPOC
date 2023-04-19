@@ -1,1 +1,1 @@
-web: gunicorn evo_labs.wsgi
+web: gunicorn evo_labs.wsgi:application
